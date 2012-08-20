@@ -18,7 +18,7 @@ jQuery(document).ready(function($) {
 			term.echo('[[b;#FFF;]whois] [[;#A40;]=>] [[;#73d216;]Who is Ayrton Araujo?]');
             term.echo('\n There\'s some other available commands. Use your imagination :-)');
         } else if (command == 'blog'){
-            term.echo('To be re-re-implemented soon');
+            window.location="http://blog.ayrtonaraujo.net/";
         } else if (command == 'contact'){
             term.echo('To be re-implemented soon');
         }  else if (command == 'date'){
