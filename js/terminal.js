@@ -95,6 +95,6 @@ you are allowed to execute: select, insert, update and delete from/to table:\n\
             term.echo("unknow command " + command);
         }
     }, {
-        greetings: 'Welcome to ayrtonaraujo.net. - Under Development (v0.2 Alpha) \r\n Type \'[[b;#FFF;]help]\' for a list of available commands.'
+        greetings: 'Welcome to ayrtonaraujo.net. - Under Development (v0.2.1 Alpha) \r\n Type \'[[b;#FFF;]help]\' for a list of available commands.'
     });
 });
