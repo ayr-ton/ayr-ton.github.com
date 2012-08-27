@@ -1,4 +1,9 @@
 jQuery(document).ready(function($) {
+    function greetings(term) {
+        term.echo('Welcome to ayrtonaraujo.net. - Under Development (v0.3.0 Alpha)\r\n'+
+                  ' Type \'[[b;#FFF;]help]\' for a list of available commands.\r\n');
+    }
+    
     var id = 1;
     $('body').terminal(function(command, term) {
         if (command == 'help') {
@@ -30,7 +35,11 @@ jQuery(document).ready(function($) {
         } else if (command == 'press'){
             term.echo('To be re-implemented soon');
         } else if (command == 'projects'){
-            term.echo('To be re-implemented soon');
+            term.echo('[[b;#FFF;]linuxacessivel.org] [[;#A40;]=>] [[;#73d216;]A customized version of Ubuntu, focused for visually impaired people who speak pt and sp;]'+
+                      '\r\n[[b;#FFF;]wikipeixes] [[;#A40;]=>] [[;#73d216;]A collaborative site with the intent to gather information on the Neotropical fish species;]' +
+                      '\r\n[[b;#FFF;]hemoam] [[;#A40;]=>] [[;#73d216;]Hematology foundation of Amazonas;]' +
+                      '\r\n[[b;#FFF;]ubuntu] [[;#A40;]=>] [[;#73d216;]Linux for human beings;]' +
+                      '\r\n[[b;#FFF;]ingres.se] [[;#A40;]=>] [[;#73d216;]A revolucionary social ticketing plataform.]');
         } else if (command == 'resume'){
             term.echo('To be re-implemented soon');
         } else if (command == 'skills'){
@@ -105,6 +114,11 @@ you are allowed to execute: select, insert, update and delete from/to table:\n\
             term.echo("unknow command " + command);
         }
     }, {
-        greetings: 'Welcome to ayrtonaraujo.net. - Under Development (v0.3.0 Alpha) \r\n Type \'[[b;#FFF;]help]\' for a list of available commands.', tabcompletion: true
+        prompt: '[[;#A40;]$] ',
+        greetings: null, 
+        onInit: function(term) {
+            greetings(term);
+        },
+        tabcompletion: true
     });
 });
