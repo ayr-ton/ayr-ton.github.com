@@ -15,9 +15,9 @@ jQuery(document).ready(function($) {
 			term.echo('[[b;#FFF;]date] [[;#A40;]=>] [[;#73d216;]Displays the current date.]');
 			term.echo('[[b;#FFF;]goto] [[;#A40;]=>] [[;#73d216;]Jump to other pages.]');
 			term.echo('[[b;#FFF;]help] [[;#A40;]=>] [[;#73d216;]help Displays this list.]');
+			term.echo('[[b;#FFF;]issues] [[;#A40;]=>] [[;#73d216;]Found bugs or have suggestions for this site?]')
 			term.echo('[[b;#FFF;]press] [[;#A40;]=>] [[;#73d216;]Press related links.]');
 			term.echo('[[b;#FFF;]projects] [[;#A40;]=>]  [[;#73d216;]List of projects Ayrton is involved on.]');
-			//term.echo('<span class="commandhelp">svn</span>SVN repository address.')
 			term.echo('[[b;#FFF;]resume] [[;#A40;]=>] [[;#73d216;]Displays a compact resume.]');
 			term.echo('[[b;#FFF;]skills] [[;#A40;]=>] [[;#73d216;]Professional skills.]');
 			term.echo('[[b;#FFF;]whois] [[;#A40;]=>] [[;#73d216;]Who is Ayrton Araujo?]');
@@ -29,11 +29,11 @@ jQuery(document).ready(function($) {
         }  else if (command == 'date'){
             term.echo('[[;#73d216;]In a relationship with] [[b;#FFF;]Madoka Ito] [[;#A40;]x3]');
         } else if (command == 'goto'){
-            term.echo('To be re-implemented soon');
-        } else if (command == 'help'){
-            term.echo('To be re-implemented soon');
-        } else if (command == 'press'){
-            term.echo('To be re-implemented soon');
+            term.echo('To be implemented soon');
+        } else if (command == 'issues'){
+            window.location="http://j.mp/issues-ayrton";
+        }else if (command == 'press'){
+            term.echo('To be implemented soon');
         } else if (command == 'projects'){
             term.echo('[[b;#FFF;]linuxacessivel.org] [[;#A40;]=>] [[;#73d216;]A customized version of Ubuntu, focused for visually impaired people who speak pt and sp;]'+
                       '\r\n[[b;#FFF;]wikipeixes] [[;#A40;]=>] [[;#73d216;]A collaborative site with the intent to gather information on the Neotropical fish species;]' +
@@ -41,9 +41,9 @@ jQuery(document).ready(function($) {
                       '\r\n[[b;#FFF;]ubuntu] [[;#A40;]=>] [[;#73d216;]Linux for human beings;]' +
                       '\r\n[[b;#FFF;]ingres.se] [[;#A40;]=>] [[;#73d216;]A revolucionary social ticketing plataform.]');
         } else if (command == 'resume'){
-            term.echo('To be re-implemented soon');
+            term.echo('To be implemented soon');
         } else if (command == 'skills'){
-            term.echo('To be re-implemented soon');
+            term.echo('To be implemented soon');
         } else if (command == 'whois'){
             term.echo('[[b;#FFF;]Ayrton Araújo] [[;#73d216;]is a software enginner with more than five years of experience in development,\r\n              desktop and server software focused on unix.\r\n\n             "I am a software engineer who likes efficiency and security.\r\n              I love debugging and digging into the code, finding out how things work and\r\n              performing client side and server side hardening.\r\n              I have also been in contact with web development, both front and back end,\r\n              learning from the latest technologies and putting them in practice in multiple projects."]');
         } else if (command == 'ping') {
