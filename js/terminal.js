@@ -22,7 +22,7 @@ jQuery(document).ready(function($) {
         } else if (command == 'contact'){
             term.echo('To be re-implemented soon');
         }  else if (command == 'date'){
-            term.echo('In a relationship with Madoka Ito x3');
+            term.echo('In a relationship with [[b;#FFF;]Madoka Ito] [[;#A40;]x3]');
         } else if (command == 'goto'){
             term.echo('To be re-implemented soon');
         } else if (command == 'help'){
@@ -36,7 +36,7 @@ jQuery(document).ready(function($) {
         } else if (command == 'skills'){
             term.echo('To be re-implemented soon');
         } else if (command == 'whois'){
-            term.echo('To be re-implemented soon');
+            term.echo('[[b;#FFF;]Ayrton Araújo] [[;#73d216;]is a software enginner with more than five years of experience in development,\r\n              desktop and server software focused on unix.\r\n\n             "I am a software engineer who likes efficiency and security.\r\n              I love debugging and digging into the code, finding out how things work and\r\n              performing client side and server side hardening.\r\n              I have also been in contact with web development, both front and back end,\r\n              learning from the latest technologies and putting them in practice in multiple projects."]');
         } else if (command == 'test'){
             term.push(function(command, term) {
                 if (command == 'help') {
@@ -95,6 +95,6 @@ you are allowed to execute: select, insert, update and delete from/to table:\n\
             term.echo("unknow command " + command);
         }
     }, {
-        greetings: 'Welcome to ayrtonaraujo.net. - Under Development (v0.2.1 Alpha) \r\n Type \'[[b;#FFF;]help]\' for a list of available commands.'
+        greetings: 'Welcome to ayrtonaraujo.net. - Under Development (v0.3.0 Alpha) \r\n Type \'[[b;#FFF;]help]\' for a list of available commands.'
     });
 });
