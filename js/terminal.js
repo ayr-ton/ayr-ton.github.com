@@ -37,18 +37,28 @@ jQuery(document).ready(function($) {
             term.echo('To be re-implemented soon');
         } else if (command == 'whois'){
             term.echo('[[b;#FFF;]Ayrton Araújo] [[;#73d216;]is a software enginner with more than five years of experience in development,\r\n              desktop and server software focused on unix.\r\n\n             "I am a software engineer who likes efficiency and security.\r\n              I love debugging and digging into the code, finding out how things work and\r\n              performing client side and server side hardening.\r\n              I have also been in contact with web development, both front and back end,\r\n              learning from the latest technologies and putting them in practice in multiple projects."]');
-        } else if (command == 'test'){
-            term.push(function(command, term) {
-                if (command == 'help') {
-                    term.echo('if you type ping it will display pong');
-                } else if (command == 'ping') {
+        } else if (command == 'ping') {
                     term.echo('pong');
-                } else {
-                    term.echo('unknown command ' + command);
-                }
-            }, {
-                prompt: 'test>',
-                name: 'test'});
+        } else if (command == 'apt-get') {
+                    term.echo('[[;#73d216;]This APT has Super Cow Powers.]');
+        } else if (command == 'apt-get moo') {
+                    term.echo('[[;#73d216;]         (__)\r\n         (oo)\r\n   /------\\/\r\n  / |    ||\r\n *  /\\---/\\\r\n    \r\n~~   ~~\r\n...."Have you mooed today?"...]');
+        } else if (command == 'aptitude') {
+                    term.echo('[[;#73d216;]This aptitude does not have Super Cow Powers.]');
+        } else if (command == 'aptitude moo') {
+                    term.echo('[[;#73d216;]There are no Easter Eggs in this program.]');
+        } else if (command == 'aptitude -v moo') {
+                    term.echo('[[;#73d216;]There really are no Easter Eggs in this program.]');
+        } else if (command == 'aptitude -vv moo') {
+                    term.echo('[[;#73d216;]Didn\'t I already tell you that there are no Easter Eggs in this program?]');
+        } else if (command == 'aptitude -vvv moo') {
+                    term.echo('[[;#73d216;]Stop it!]');
+        } else if (command == 'aptitude -vvvv moo') {
+                    term.echo('[[;#73d216;]Okay, okay, if I give you an Easter Egg, will you go away?]');
+        } else if (command == 'aptitude -vvvvv moo') {
+                    term.echo('[[;#73d216;]All right, you win.\r\n\n                               /----\\\r\n                       -------/      \\\r\n                      /               \\\r\n                     /                |\r\n   -----------------/                  --------\\\r\n   ----------------------------------------------]');
+        } else if (command == 'aptitude -vvvvvv moo') {
+                    term.echo('[[;#73d216;]What is it? It\'s an elephant being eaten by a snake, of course.]');
         } else if (command == "js") {
             term.push(function(command, term) {
                 var result = window.eval(command);
