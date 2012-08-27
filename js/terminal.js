@@ -20,9 +20,9 @@ jQuery(document).ready(function($) {
         } else if (command == 'blog'){
             window.location="http://blog.ayrtonaraujo.net/";
         } else if (command == 'contact'){
-            term.echo('To be re-implemented soon');
+            window.location.href = "mailto:root@ayrtonaraujo.net";
         }  else if (command == 'date'){
-            term.echo('In a relationship with [[b;#FFF;]Madoka Ito] [[;#A40;]x3]');
+            term.echo('[[;#73d216;]In a relationship with] [[b;#FFF;]Madoka Ito] [[;#A40;]x3]');
         } else if (command == 'goto'){
             term.echo('To be re-implemented soon');
         } else if (command == 'help'){
@@ -105,6 +105,6 @@ you are allowed to execute: select, insert, update and delete from/to table:\n\
             term.echo("unknow command " + command);
         }
     }, {
-        greetings: 'Welcome to ayrtonaraujo.net. - Under Development (v0.3.0 Alpha) \r\n Type \'[[b;#FFF;]help]\' for a list of available commands.'
+        greetings: 'Welcome to ayrtonaraujo.net. - Under Development (v0.3.0 Alpha) \r\n Type \'[[b;#FFF;]help]\' for a list of available commands.', tabcompletion: true
     });
 });
