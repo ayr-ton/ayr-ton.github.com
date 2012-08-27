@@ -22,7 +22,7 @@ jQuery(document).ready(function($) {
         } else if (command == 'contact'){
             term.echo('To be re-implemented soon');
         }  else if (command == 'date'){
-            term.echo('To be re-implemented soon');
+            term.echo('In a relationship with Madoka Ito x3');
         } else if (command == 'goto'){
             term.echo('To be re-implemented soon');
         } else if (command == 'help'){
