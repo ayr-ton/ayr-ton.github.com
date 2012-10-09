@@ -1,4 +1,4 @@
-ayrtonfreeman.github.com [![Build Status](https://secure.travis-ci.org/ayrtonfreeman/ayrtonfreeman.github.com.png)](http://travis-ci.org/ayrtonfreeman/ayrtonfreeman.github.com)
+ayrtonaraujo.net [![Build Status](https://secure.travis-ci.org/ayrtonfreeman/ayrtonaraujo.net.png)](http://travis-ci.org/ayrtonfreeman/ayrtonaraujo.net)
 ================
 
 The site sources of ayrtonaraujo.net.
