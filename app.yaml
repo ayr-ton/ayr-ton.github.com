@@ -6,8 +6,17 @@ threadsafe: yes
 
 handlers:
 - url: /favicon\.ico
-  static_files: favicon.ico
+  static_files: static/favicon.ico
   upload: favicon\.ico
 
+- url: /css
+  static_dir: static/css
+
+- url: /js
+  static_dir: static/js
+
+- url: /img
+  static_dir: static/img
+
 - url: .*
-  script: helloworld.app
+  script: shell.app
