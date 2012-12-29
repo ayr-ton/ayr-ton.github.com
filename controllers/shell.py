@@ -9,7 +9,7 @@ class MainPage(webapp2.RequestHandler):
         <html>
         <head>
         <title>ayrtonaraujo.net - v0.3.0 Alpha</title>
-        <link href="css/jquery.terminal.css" rel="stylesheet"/>
+        <link href="css/style.css" rel="stylesheet"/>
         <script type="text/javascript" src="js/shell-0.3.0.js" async="async">
         </script>
         </head>
@@ -17,6 +17,3 @@ class MainPage(webapp2.RequestHandler):
         </body>
         </html>
         """)
-
-app = webapp2.WSGIApplication([('/', MainPage)],
-                              debug=True)
