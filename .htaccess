@@ -1,0 +1,20 @@
+# -FrontPage-
+
+IndexIgnore .htaccess */.??* *~ *# */HEADER* */README* */_vti*
+ErrorDocument 404 /404.html
+
+<Limit GET POST>
+order deny,allow
+deny from all
+allow from all
+</Limit>
+<Limit PUT DELETE>
+order deny,allow
+deny from all
+</Limit>
+AuthName ayrtonaraujo.net
+AuthUserFile /home/ayrlabs/public_html/_vti_pvt/service.pwd
+AuthGroupFile /home/ayrlabs/public_html/_vti_pvt/service.grp
+AddType application/x-httpd-php54 .php
+
+
