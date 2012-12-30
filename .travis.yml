@@ -7,7 +7,7 @@ before_script:
   - unzip -q google_appengine_1.7.4.zip
 
 install:
-  - "echo Ready to test..."
+  - apt-get -y install nodejs
 
 script:
   - "echo Nothing to test yet..."
