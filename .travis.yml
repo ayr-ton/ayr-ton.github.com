@@ -1,6 +1,13 @@
 language: python
 python:
   - "2.7"
+
 before_script:
   - wget http://googleappengine.googlecode.com/files/google_appengine_1.7.4.zip -nv
   - unzip -q google_appengine_1.7.4.zip
+
+install:
+  - "echo Ready to test..."
+
+script:
+  - "echo Nothing to test yet..."
