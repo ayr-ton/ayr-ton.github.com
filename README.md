@@ -8,10 +8,11 @@ This project is built with:
 
 [![JQuery](http://jquery.org/wp-content/uploads/2010/01/JQuery_logo_color_onwhite-300x74.png)](http://jquery.org/)
 
-[![Python](http://www.python.org/community/logos/python-powered-w-100x40.png)](http://www.python.org/)
-[![Google App Engine](https://developers.google.com/appengine/images/appengine-silver-120x30.gif)](https://developers.google.com/appengine/docs/whatisgoogleappengine)
-
 [![TDD](http://d2o0t5hpnwv4c1.cloudfront.net/767_testDrivenDev/tdd.png)](http://en.wikipedia.org/wiki/Test-driven_development)
+
+[![Python](http://www.python.org/community/logos/python-powered-w-100x40.png)](http://www.python.org/)
+[![Google App Engine](https://developers.google.com/appengine/images/appengine-noborder-120x30.gif)](https://developers.google.com/appengine/docs/whatisgoogleappengine)
+
 
 License Information
 ===================
