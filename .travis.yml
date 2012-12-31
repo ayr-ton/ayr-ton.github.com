@@ -11,4 +11,4 @@ install:
   - sudo apt-get -y install nodejs
 
 script:
-  - "echo Nothing to test yet..."
+  - "echo Building the tests..."
