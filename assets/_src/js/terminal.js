@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
     function greetings(term) {
-        term.echo('Welcome to ayrtonaraujo.net. - Under Development (v0.3.0 Alpha)\r\n'+
+        term.echo('Welcome to ayrtonaraujo.net. - Under Development (v0.3.1 Alpha)\r\n'+
                   ' Type \'[[b;#FFF;]help]\' for a list of available commands.\r\n');
     }
     
@@ -17,7 +17,7 @@ jQuery(document).ready(function($) {
 			term.echo('[[b;#FFF;]help] [[;#A40;]=>] [[;#73d216;]help Displays this list.]');
 			term.echo('[[b;#FFF;]issues] [[;#A40;]=>] [[;#73d216;]Found bugs or have suggestions for this site?]')
 			term.echo('[[b;#FFF;]press] [[;#A40;]=>] [[;#73d216;]Press related links.]');
-			term.echo('[[b;#FFF;]projects] [[;#A40;]=>]  [[;#73d216;]List of projects Ayrton is involved on.]');
+			//term.echo('[[b;#FFF;]projects] [[;#A40;]=>]  [[;#73d216;]List of projects Ayrton is involved on.]');
 			term.echo('[[b;#FFF;]resume] [[;#A40;]=>] [[;#73d216;]Displays a compact resume.]');
 			term.echo('[[b;#FFF;]skills] [[;#A40;]=>] [[;#73d216;]Professional skills.]');
 			term.echo('[[b;#FFF;]whois] [[;#A40;]=>] [[;#73d216;]Who is Ayrton Araujo?]');
@@ -31,15 +31,17 @@ jQuery(document).ready(function($) {
         } else if (command == 'goto'){
             term.echo('To be implemented soon');
         } else if (command == 'issues'){
-            window.location="http://j.mp/issues-ayrton";
+            window.location="http://github.com/ayr-ton/ayrtonaraujo.net/issues";
         }else if (command == 'press'){
             term.echo('To be implemented soon');
+        /*
         } else if (command == 'projects'){
             term.echo('[[b;#FFF;]linuxacessivel.org] [[;#A40;]=>] [[;#73d216;]A customized version of Ubuntu, focused for visually impaired people who speak pt and sp;]'+
                       '\r\n[[b;#FFF;]wikipeixes] [[;#A40;]=>] [[;#73d216;]A collaborative site with the intent to gather information on the Neotropical fish species;]' +
                       '\r\n[[b;#FFF;]hemoam] [[;#A40;]=>] [[;#73d216;]Hematology foundation of Amazonas;]' +
                       '\r\n[[b;#FFF;]ubuntu] [[;#A40;]=>] [[;#73d216;]Linux for human beings;]' +
-                      '\r\n[[b;#FFF;]ingres.se] [[;#A40;]=>] [[;#73d216;]A revolucionary social ticketing plataform.]');
+                      '\r\n[[b;#FFF;]ingres.se] [[;#A40;]=>] [[;#73d216;]A revolucionary social ticketing plataform.]'); 
+        */
         } else if (command == 'resume'){
             term.echo('To be implemented soon');
         } else if (command == 'skills'){

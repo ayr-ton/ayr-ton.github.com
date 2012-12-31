@@ -1,4 +1,4 @@
-VER=0.3.0
+VER=0.3.1
 
 shell=('jquery-1.7.1.js' 'jquery.mousewheel-min.js' 'jquery.terminal-0.4.17.js' 'terminal.js')
 
