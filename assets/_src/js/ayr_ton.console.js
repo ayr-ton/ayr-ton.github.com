@@ -1,5 +1,5 @@
 function Console() {
-    var notimplemented = 'To be implemented soon. (or not)';
+    var notimplemented = 'To be implemented soon. (or not)\n';
     this.init = function () {
         $(document).ready(function($) {
             // Creating the console.

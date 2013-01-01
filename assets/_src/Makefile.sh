@@ -8,7 +8,7 @@ cd $BASEDIR
 
 # Versions of files
 libs_version=0001
-app_version=0002
+app_version=0003
 
 # All javascripts of site in their respective groups
 libs=('jquery-1.8.3.min.js' 'jqconsole-2.7.min.js')
