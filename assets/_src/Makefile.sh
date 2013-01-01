@@ -1,13 +1,18 @@
 #!/bin/bash
 # This script is used to compress all js groups of this projects
 
+# Run the script from the right path
+BASEDIR=$(dirname $0)
+NOW=`pwd`
+cd $BASEDIR
+
 # Versions of files
 libs_version=0001
 app_version=0001
 
 # All javascripts of site in their respective groups
-libs=('jquery-1.7.1.js' 'jquery.mousewheel-min.js' 'jquery.terminal-0.4.17.js')
-app=('terminal.js')
+libs=('jquery-1.8.3.min.js' 'jqconsole-2.7.min.js')
+app=('ayr_ton.console.js')
 
 # Don't touch in the lines starting from here
 
@@ -48,7 +53,8 @@ main() {
             for javascript in ${app[@]}; do
                 genjs $javascript app-$app_version.js
             done;;
-      4) exit ;;
+      4) cd $NOW;
+         exit ;;
       *) "Unknown option." ; echo ; main ;;
    esac
 }
