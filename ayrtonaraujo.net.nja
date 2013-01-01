@@ -13,6 +13,7 @@
   "PYTHONPATH": "\n", 
   "supported-extensions": [
     ".py", 
+    ".sh", 
     ".html", 
     ".css", 
     ".json", 
