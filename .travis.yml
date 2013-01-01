@@ -8,6 +8,8 @@ before_script:
   - GOOGLE_APP_ENGINE=`pwd`/google_appengine
   - PYRTHONPATH=$GOOGLE_APP_ENGINE
   - PYTHONPATH=$PYTHONPATH:$GOOGLE_APP_ENGINE/lib/
+  - PYTHONPATH=$PYTHONPATH:$GOOGLE_APP_ENGINE/lib/webob_0_9
+  - PYTHONPATH=$PYTHONPATH:$GOOGLE_APP_ENGINE/lib/webapp2
 
 install:
   - sudo apt-get -y install nodejs
