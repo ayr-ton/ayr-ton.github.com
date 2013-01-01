@@ -1,4 +1,5 @@
 function Console() {
+    var notimplemented = 'To be implemented soon. (or not)';
     this.init = function () {
         $(document).ready(function($) {
             // Creating the console.
@@ -55,7 +56,6 @@ function Console() {
             handler();
         });
     }
-
     this.help = function () {
         var help =
         '\033[1mList of available commands:\033[0m\n' +
@@ -71,9 +71,51 @@ function Console() {
         '\033[33mresume\033[0m ==> \033[36mDisplays a compact resume.\n' +
         '\033[33mskills\033[0m ==> \033[36mProfessional skills.\n' +
         '\033[33mwhois\033[0m ==> \033[36mWho is Ayrton Araujo?\033[0m\n' +
-        '\nThere\'s some other available commands. Use your imagination :-)\n'
+        '\nThere\'s some other available commands. Use your imagination :-)\n';
         jqconsole.Write(help);
     }
+    //#TODO: Implement clear (issue 33)
+    this.blog = function () {
+        window.location="http://blog.ayrtonaraujo.net/";
+    }
+    this.contact = function () {
+        window.location.href = "mailto:root@ayrtonaraujo.net";
+    }
+    this.date = function () {
+        var date = '[[;#73d216;]In a relationship with] [[b;#FFF;]Madoka Ito] [[;#A40;]x3]';
+        jqconsole.Write(notimplemented);
+        //#FIXME: Format the old syntax of date command (issue 30)
+    }
+    /*
+    this.go = function () {
+        jqconsole.Write(notimplemented);
+        //#TODO: Implement goto (issue 4)
+    }*/
+    this.issues = function () {
+        window.location="http://github.com/ayr-ton/ayrtonaraujo.net/issues";
+    }
+    this.press = function () {
+        jqconsole.Write(notimplemented);
+        //#TODO: Implement press (issue 5)
+    }
+    this.projects = function () {
+        jqconsole.Write(notimplemented);
+        //#TODO: Implement projects (issue 20)
+    }
+    this.resume = function () {
+        jqconsole.Write(notimplemented);
+        //#TODO: Implement resume (issue 7)
+    }
+    this.skills = function () {
+        jqconsole.Write(notimplemented);
+        //#TODO: Implement skills (issue 8)
+    }
+    this.whois = function () {
+        var whois = '[[b;#FFF;]Ayrton Araújo] [[;#73d216;]is a software enginner with more than five years of experience in development,\r\n              desktop and server software focused on unix.\r\n\n             "I am a software engineer who likes efficiency and security.\r\n              I love debugging and digging into the code, finding out how things work and\r\n              performing client side and server side hardening.\r\n              I have also been in contact with web development, both front and back end,\r\n              learning from the latest technologies and putting them in practice in multiple projects."]';
+        jqconsole.Write(notimplemented);
+        //#FIXME: Format whois to the new format (issue 31)
+    }
+    //#FIXME: Port easter eggs (issue 32)
 };
 var Console = new Console();
 Console.init();
