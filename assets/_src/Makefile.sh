@@ -1,4 +1,4 @@
-#!/bin/bash
+]#!/bin/bash
 # This script is used to compress all js groups of this projects
 
 # Run the script from the right path
@@ -8,11 +8,11 @@ cd $BASEDIR
 
 # Versions of files
 libs_version=0001
-app_version=0003
+app_version=0004
 
 # All javascripts of site in their respective groups
 libs=('jquery-1.8.3.min.js' 'jqconsole-2.7.min.js')
-app=('ayr_ton.console.js')
+app=('ayr_ton.shell.js')
 
 # Don't touch in the lines starting from here
 

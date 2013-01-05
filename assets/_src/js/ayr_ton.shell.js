@@ -1,4 +1,4 @@
-function Console() {
+function Shell() {
     var notimplemented = 'To be implemented soon. (or not)\n';
     this.init = function () {
         $(document).ready(function($) {
@@ -32,7 +32,7 @@ function Console() {
             var handler = function(command) {
             if (command) {
                 try {
-                  Console[command]();
+                  Shell[command]();
                 } catch (e) {
                   jqconsole.Write(command + ': command not found\n');
                 }
@@ -117,5 +117,5 @@ function Console() {
     }
     //#FIXME: Port easter eggs (issue 32)
 };
-var Console = new Console();
-Console.init();
+var Shell = new Shell();
+Shell.init();

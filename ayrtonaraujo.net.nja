@@ -1,6 +1,5 @@
 {
   "mainFile": "", 
-  "use-tabs": false, 
   "venv": "", 
   "relatedProjects": [], 
   "name": "ayrtonaraujo.net", 
@@ -9,7 +8,6 @@
   "pythonPath": "python", 
   "preExecScript": "", 
   "programParams": "", 
-  "indentation": 4, 
   "PYTHONPATH": "\n", 
   "supported-extensions": [
     ".py", 
@@ -19,7 +17,8 @@
     ".json", 
     ".js", 
     ".ini", 
-    ".yaml"
+    ".yaml", 
+    "yml"
   ], 
   "project-type": "", 
   "postExecScript": "", 
