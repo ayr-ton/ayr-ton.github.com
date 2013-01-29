@@ -7,9 +7,8 @@ This project is built with:
 ===================
 [![Express](http://f.cl.ly/items/0V2S1n0K1i3y1c122g04/Screen%20Shot%202012-04-11%20at%209.59.42%20AM.png)](http://en.wikipedia.org/wiki/Test-driven_development)
 
-[![JQuery](http://jquery.org/wp-content/uploads/2010/01/JQuery_logo_color_onwhite-300x74.png)](http://jquery.org/)
-
 [![TDD](http://d2o0t5hpnwv4c1.cloudfront.net/767_testDrivenDev/tdd.png)](http://en.wikipedia.org/wiki/Test-driven_development)
+[![JQuery](http://jquery.org/wp-content/uploads/2010/01/JQuery_logo_color_onwhite-300x74.png)](http://jquery.org/)
 
 ## License 
 
