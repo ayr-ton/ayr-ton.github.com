@@ -1,15 +1,4 @@
-language: python
-python:
-  - "2.7"
-
-install:
-  - wget http://googleappengine.googlecode.com/files/google_appengine_1.7.4.zip -nv
-  - unzip -q google_appengine_1.7.4.zip
-  - GOOGLE_APP_ENGINE=`pwd`/google_appengine
-  - export PYTHONPATH=$GOOGLE_APP_ENGINE
-  - export PYTHONPATH=$PYTHONPATH:$GOOGLE_APP_ENGINE/lib/
-  - export PYTHONPATH=$PYTHONPATH:$GOOGLE_APP_ENGINE/lib/webob_0_9
-  - export PYTHONPATH=$PYTHONPATH:$GOOGLE_APP_ENGINE/lib/webapp2
-
-script:
-  - nosetests
+language: node_js
+node_js:
+  - 0.6
+  - 0.8
