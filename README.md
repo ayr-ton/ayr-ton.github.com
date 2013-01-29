@@ -3,6 +3,33 @@ ayrtonaraujo.net [![Build Status](https://secure.travis-ci.org/ayr-ton/ayrtonara
 
 The source of ayrtonaraujo.net website.
 
+## Quick Start
+
+ Install dependencies:
+
+    $ npm install
+
+ Start the server:
+
+    $ node app
+
+## Running Tests
+
+To run the test suite first invoke the following command within the repo, installing the development dependencies:
+
+    $ npm install
+
+then run the tests:
+
+    $ make test
+
+## More Information
+
+  * Join #hackandplay on freenode
+  * [Google+](http://gplus.to/ayrtonfreeman) for discussion
+  * Follow [ayrtonfreeman](http://twitter.com/ayrtonfreeman) on twitter for updates
+  * Visit the [Wiki](http://github.com/ayr-ton/ayrtonaraujo.net/wiki)
+
 This project is built with:
 ===================
 
