@@ -1,0 +1,23 @@
+{
+    "name": "ayrtonaraujo.net"
+  , "version": "0.4.1"
+  , "private": true
+  , "author": { "name": "Ayrton Araújo", "email": "root@ayrtonaraujo.net", "url": "http://ayrtonaraujo.net/" }
+  , "repository": {
+    "type": "git",
+    "url": "git://github.com/ayr-ton/ayrtonaraujo.net.git"
+  }
+  , "bugs": {
+    "url": "https://github.com/ayr-ton/ayrtonaraujo.net/issues"
+  }
+  , "dependencies": {
+      "express": "2.5.8"
+    , "stylus": ">= 0.0.1"
+    , "jade": ">= 0.0.1"
+  }
+  , "engines": { "node": ">= 0.6.19" }
+  , "licenses": [ {
+    "type": "MIT",
+    "url": "http://www.opensource.org/licenses/MIT" 
+  } ]
+}
