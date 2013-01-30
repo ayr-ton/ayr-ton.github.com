@@ -1,5 +1,6 @@
 ]#!/bin/bash
 # This script is used to compress all js groups of this projects
+# Port this to nodejs and close the issue #36
 
 # Run the script from the right path
 BASEDIR=$(dirname $0)
