@@ -1,6 +1,7 @@
 {
     "name": "ayrtonaraujo.net"
   , "version": "0.4.1"
+  , "milestone" : "Alpha"
   , "private": true
   , "author": { "name": "Ayrton Araújo", "email": "root@ayrtonaraujo.net", "url": "http://ayrtonaraujo.net/" }
   , "repository": {
