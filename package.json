@@ -11,6 +11,10 @@
   , "bugs": {
     "url": "https://github.com/ayr-ton/ayrtonaraujo.net/issues"
   }
+  , "assets": {
+    "libs": "0001"
+   ,"app": "0004"
+  }
   , "dependencies": {
       "express": "2.5.8"
     , "stylus": ">= 0.0.1"
