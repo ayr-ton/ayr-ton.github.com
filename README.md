@@ -30,11 +30,6 @@ then run the tests:
   * Follow [ayrtonfreeman](http://twitter.com/ayrtonfreeman) on twitter for updates
   * Visit the [Wiki](http://github.com/ayr-ton/ayrtonaraujo.net/wiki)
 
-Web hosting provided by:
-===================  
-
-[![Ram Node](http://www.ramnode.com/images/banners/ramnode3aff.png)](https://clientarea.ramnode.com/aff.php?aff=190)
-
 This project is built with:
 ===================
 
