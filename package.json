@@ -20,7 +20,10 @@
     , "stylus": ">= 0.0.1"
     , "jade": ">= 0.0.1"
   }
-  , "engines": { "node": ">= 0.6.19" }
+  , "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  }
   , "licenses": [ {
     "type": "MIT",
     "url": "http://www.opensource.org/licenses/MIT" 
