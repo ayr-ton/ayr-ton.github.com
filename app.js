@@ -45,6 +45,10 @@ new compressor.minify({
     fileIn: 'assets/js/ayr_ton.shell.js',
     fileOut: 'public/js/shell-0001.js',
     callback: function(err){
-        console.log(err);
+	if (err) {
+            console.log(err);
+        } else {
+            console.log("All files minified with success.");
+        }
     }
 });
