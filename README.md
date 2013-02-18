@@ -35,12 +35,12 @@ This project is built with:
 
 [![Ubuntu Server](http://design.canonical.com/wp-content/uploads/2011/03/ubuntu_logo_black-orange.png)](http://www.ubuntu.com/download/server)
 
+[![node.js](http://upload.wikimedia.org/wikipedia/en/a/a7/Nodejs_logo_light.png)](http://nodejs.org/)
 [![Express](http://f.cl.ly/items/0V2S1n0K1i3y1c122g04/Screen%20Shot%202012-04-11%20at%209.59.42%20AM.png)](http://expressjs.com/)
 
-[![node.js](http://upload.wikimedia.org/wikipedia/en/a/a7/Nodejs_logo_light.png)](http://nodejs.org/)
+[![Cloudflare](http://www.cloudflare.com/media/images/web-badges/cf-web-badges-a-dkblue-on.png)](http://www.cloudflare.com/)
 
 [![TDD](http://d2o0t5hpnwv4c1.cloudfront.net/767_testDrivenDev/tdd.png)](http://en.wikipedia.org/wiki/Test-driven_development)
-[![Cloudflare](http://www.cloudflare.com/media/images/web-badges/cf-web-badges-a-dkblue-on.png)](http://www.cloudflare.com/)
 [![JQuery](http://jquery.org/wp-content/uploads/2010/01/JQuery_logo_color_onwhite-300x74.png)](http://jquery.org/)
 
 
