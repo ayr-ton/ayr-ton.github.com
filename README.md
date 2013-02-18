@@ -39,8 +39,6 @@ This project is built with:
 
 [![node.js](http://upload.wikimedia.org/wikipedia/en/a/a7/Nodejs_logo_light.png)](http://nodejs.org/)
 
-[![nginx](http://wiki.nginx.org/images/8/83/Nginx-logo.svg)](http://nginx.org/) 
-
 [![TDD](http://d2o0t5hpnwv4c1.cloudfront.net/767_testDrivenDev/tdd.png)](http://en.wikipedia.org/wiki/Test-driven_development)
 [![JQuery](http://jquery.org/wp-content/uploads/2010/01/JQuery_logo_color_onwhite-300x74.png)](http://jquery.org/)
 
