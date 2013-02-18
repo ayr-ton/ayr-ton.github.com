@@ -3,7 +3,7 @@ function Shell() {
     this.init = function () {
         $(window).load(function() {
             // Creating the console.
-            var header = "Welcome to ayrtonaraujo.net. - Under Development (v0.4.0 Alpha)\n" +
+            var header = "Welcome to ayrtonaraujo.net. - Under Development (" + global_version + ")\n" +
                      "    Type '\033[1mhelp\033[0m' for a list of available commands.\n";
             window.jqconsole = $('body').jqconsole(header, '$ -> ');
 
