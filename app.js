@@ -4,7 +4,8 @@
  */
 
 var express = require('express')
-  , routes = require('./routes');
+  , routes = require('./routes')
+  , compressor = require('node-minify');;
 
 var app = module.exports = express.createServer();
 
@@ -36,4 +37,14 @@ app.get('/', routes.index);
 
 app.listen(3000, function(){
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
+});
+
+// Minify the files
+new compressor.minify({
+    type: 'uglifyjs',
+    fileIn: 'assets/js/ayr_ton.shell.js',
+    fileOut: 'public/js/shell-0001.js',
+    callback: function(err){
+        console.log(err);
+    }
 });
