@@ -1,7 +1,7 @@
 ayrtonaraujo.net [![Build Status](https://secure.travis-ci.org/ayr-ton/ayrtonaraujo.net.png)](http://travis-ci.org/ayr-ton/ayrtonaraujo.net)
 ================
 
-The source of ayrtonaraujo.net website.
+The source of ayrtonaraujo.net website, a terminal look like portfolio for geeks.
 
 ## Quick Start
 
