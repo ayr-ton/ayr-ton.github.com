@@ -30,6 +30,12 @@ then run the tests:
   * Follow [ayrtonfreeman](http://twitter.com/ayrtonfreeman) on twitter for updates
   * Visit the [Wiki](http://github.com/ayr-ton/ayrtonaraujo.net/wiki)
 
+Proudly hosted with:
+===================
+
+[![nodejitsu](http://dl.dropbox.com/u/14393805/logos/nodejitsu-github.png)](https://www.nodejitsu.com/)
+
+
 This project is built with:
 ===================
 
