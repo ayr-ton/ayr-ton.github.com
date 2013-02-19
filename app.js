@@ -42,7 +42,7 @@ app.listen(3000, function(){
 // Minify the files
 new compressor.minify({
     type: 'uglifyjs',
-    fileIn: 'assets/js/ayr_ton.shell.js',
+    fileIn: 'assets/ayr_ton.shell.js',
     fileOut: 'public/js/shell-0001.js',
     callback: function(err){
 	if (err) {
