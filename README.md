@@ -1,4 +1,4 @@
-ayr-terminal [![Build Status](https://secure.travis-ci.org/ayr-ton/ayr-terminal.png)](http://travis-ci.org/ayr-ton/ayr-terminal)
+ayr-terminal [![Build Status](https://travis-ci.org/ayr-ton/ayr-terminal.png?branch=master)](https://travis-ci.org/ayr-ton/ayr-terminal)
 ================
 
 The source of ayrtonaraujo.net website, a terminal look like portfolio for geeks.
