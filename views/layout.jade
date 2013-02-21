@@ -1,0 +1,9 @@
+!!! 5
+html
+  head
+    title= pjson.name + ' - v' + pjson.version + ' ' + pjson.milestone
+    link(rel='stylesheet', href='/css/style.css')
+    script
+        var global_version = 'v#{pjson.version} ' + '#{pjson.milestone}';
+  body!= body
+  block scripts

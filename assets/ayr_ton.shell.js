@@ -1,9 +1,9 @@
-function Console() {
+function Shell() {
     var notimplemented = 'To be implemented soon. (or not)\n';
     this.init = function () {
-        $(document).ready(function($) {
+        $(window).load(function() {
             // Creating the console.
-            var header = "Welcome to ayrtonaraujo.net. - Under Development (v0.4.0 Alpha)\n" +
+            var header = "Welcome to ayrtonaraujo.net. - Under Development (" + global_version + ")\n" +
                      "    Type '\033[1mhelp\033[0m' for a list of available commands.\n";
             window.jqconsole = $('body').jqconsole(header, '$ -> ');
 
@@ -32,7 +32,7 @@ function Console() {
             var handler = function(command) {
             if (command) {
                 try {
-                  Console[command]();
+                  Shell[command]();
                 } catch (e) {
                   jqconsole.Write(command + ': command not found\n');
                 }
@@ -117,5 +117,5 @@ function Console() {
     }
     //#FIXME: Port easter eggs (issue 32)
 };
-var Console = new Console();
-Console.init();
+var Shell = new Shell();
+Shell.init();
