@@ -28,7 +28,7 @@ then run the tests:
   * Join #hackandplay on freenode
   * [Google+](http://gplus.to/ayrtonfreeman) for discussion
   * Follow [ayrtonfreeman](http://twitter.com/ayrtonfreeman) on twitter for updates
-  * Visit the [Wiki](http://github.com/ayr-ton/ayrtonaraujo.net/wiki)
+  * Visit the [Wiki](http://wiki.ayrtonaraujo.net)
 
 Proudly hosted with:
 ===================
