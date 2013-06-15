@@ -18,7 +18,7 @@ var Terminal = Terminal || function(containerId) {
 
   const VERSION_ = '0.5.0';
   const CMDS_ = [
-    '3d', 'clear', 'date', 'help', 'theme', 'version', 
+    'blog', 'clear', 'date', 'help', 'theme', 'version', 
 	'who' 
   ];
   const THEMES_ = ['default', 'cream'];
@@ -167,29 +167,17 @@ var Terminal = Terminal || function(containerId) {
       }
 
       switch (cmd) {
-        case '3d':
+        case 'blog':
           clear_(this);
           output('Hold on to your butts!');
           toggle3DView_();
-          break;
-        case 'cat':
-          var fileName = args.join(' ');
-
-          if (!fileName) {
-            output('usage: ' + cmd + ' filename');
-            break;
-          }
-
-          read_(cmd, fileName, function(result) {
-            output('<pre>' + result + '</pre>');
-          });
-
           break;
         case 'clear':
           clear_(this);
           return;
         case 'date':
-          output((new Date()).toLocaleString());
+          //output((new Date()).toLocaleString());
+          output('In a relationship with Madoka. x3');
           break;
         case 'exit':
           if (is3D_) {
@@ -513,7 +501,7 @@ var Terminal = Terminal || function(containerId) {
       var transEnd_ = function(e) {
         var iframe = document.createElement('iframe');
         iframe.id = 'fsn';
-        iframe.src = '../fsn/fsn_proto.html';
+        iframe.src = 'http://www.ayrtonaraujo.net/blog';
 
         fsn_ = body.insertBefore(iframe, body.firstElementChild);
 
