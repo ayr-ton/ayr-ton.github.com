@@ -1,21 +1,3 @@
-/*
-Copyright 2011 Google Inc.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-
-Author: Eric Bidelman (ericbidelman@chromium.org)
-*/
-
 var util = util || {};
 util.toArray = function(list) {
   return Array.prototype.slice.call(list || [], 0);
@@ -31,68 +13,13 @@ util.getDocHeight = function() {
   );
 };
 
-
-// TODO(ericbidelman): add fallback to html5 audio.
-function Sound(opt_loop) {
-  var self_ = this;
-  var context_ = null;
-  var source_ = null;
-  var loop_ = opt_loop || false;
-
-  window.AudioContext = window.AudioContext || window.webkitAudioContext;
-  if (window.AudioContext) {
-    context_ = new window.AudioContext();
-  }
-
-  this.load = function(url, mixToMono, opt_callback) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true);
-    xhr.responseType = 'arraybuffer';
-    xhr.onload = function() {
-      if (context_) {
-        /*self_.sample = context_.createBuffer(this.response, mixToMono);
-        if (opt_callback) {
-          opt_callback();
-        }
-        */
-        context_.decodeAudioData(this.response, function(audioBuffer) {
-          self_.sample = audioBuffer;
-          opt_callback && opt_callback();
-        }, function(e) {
-          console.log(e);
-        });
-      }
-    };
-    xhr.send();
-  };
-
-  this.play = function() {
-    if (context_) {
-      source_ = context_.createBufferSource();
-      source_.buffer = self_.sample;
-      source_.looping = loop_;
-      source_.connect(context_.destination);
-      source_.noteOn(0);
-    }
-  };
-
-  this.stop = function() {
-    if (source_) {
-      source_.noteOff(0);
-      source_.disconnect(0);
-    }
-  };
-}
-
 var Terminal = Terminal || function(containerId) {
   window.URL = window.URL || window.webkitURL;
-  window.requestFileSystem = window.requestFileSystem ||
-                             window.webkitRequestFileSystem;
 
-  const VERSION_ = '1.0.0';
+  const VERSION_ = '0.5.0';
   const CMDS_ = [
-    '3d', 'cat', 'cd', 'cp', 'clear', 'date', 'help', 'install', 'ls', 'mkdir',
-    'mv', 'open', 'pwd', 'rm', 'rmdir', 'theme', 'version', 'who', 'wget'
+    '3d', 'clear', 'date', 'help', 'theme', 'version', 
+	'who' 
   ];
   const THEMES_ = ['default', 'cream'];
 
@@ -108,20 +35,6 @@ var Terminal = Terminal || function(containerId) {
   var fsn_ = null;
   var is3D_ = false;
 
-  // Fire worker to return recursive snapshot of current FS tree.
-  var worker_ = new Worker('worker.js');
-  worker_.onmessage = function(e) {
-    var data = e.data;
-    if (data.entries) {
-      fsn_.contentWindow.postMessage({cmd: 'build', data: data.entries},
-                                     window.location.origin);
-    }
-    if (data.msg) {
-      output('<div>' + data.msg + '</div>');
-    }
-  };
-  worker_.onerror = function(e) { console.log(e) };
-
   // Create terminal and cache DOM nodes;
   var container_ = document.getElementById(containerId);
   container_.insertAdjacentHTML('beforeEnd',
@@ -132,8 +45,6 @@ var Terminal = Terminal || function(containerId) {
   var cmdLine_ = container_.querySelector('#input-line .cmdline');
   var output_ = container_.querySelector('output');
   var interlace_ = document.querySelector('.interlace');
-  var bell_ = new Sound(false);
-  bell_.load('beep.mp3', false);
 
   // Hackery to resize the interlace background image as the container grows.
   output_.addEventListener('DOMSubtreeModified', function(e) {
@@ -225,13 +136,6 @@ var Terminal = Terminal || function(containerId) {
 
   function processNewCommand_(e) {
 
-    // Beep on backspace and no value on command line.
-    if (!this.value && e.keyCode == 8) {
-      bell_.stop();
-      bell_.play();
-      return;
-    }
-
     if (e.keyCode == 9) { // Tab
       e.preventDefault();
       // TODO(ericbidelman): Implement tab suggest.
@@ -298,135 +202,7 @@ var Terminal = Terminal || function(containerId) {
           break;
         case 'help':
           output('<div class="ls-files">' + CMDS_.join('<br>') + '</div>');
-          output('<p>Add files by dragging them from your desktop.</p>');
-          break;
-        case 'install':
-          // Check is installed.
-          if (window.chrome && window.chrome.app) {
-            if (!window.chrome.app.isInstalled) {
-              try {
-                chrome.app.install();
-              } catch(e) {
-                alert(e + '\nEnable is about:flags');
-              }
-            } else {
-              output('This app is already installed.');
-            }
-          }
-          break;
-        case 'ls':
-          ls_(function(entries) {
-            if (entries.length) {
-              var html = formatColumns_(entries);
-              util.toArray(entries).forEach(function(entry, i) {
-                html.push(
-                    '<span class="', entry.isDirectory ? 'folder' : 'file',
-                    '">', entry.name, '</span><br>');
-              });
-              html.push('</div>');
-              output(html.join(''));
-            }
-          });
-          break;
-        case 'pwd':
-          output(cwd_.fullPath);
-          break;
-        case 'cd':
-          var dest = args.join(' ') || '/';
-
-          cwd_.getDirectory(dest, {}, function(dirEntry) {
-            cwd_ = dirEntry;
-            output('<div>' + dirEntry.fullPath + '</div>');
-
-            // Tell FSN visualizer that we're cd'ing.
-            if (fsn_) {
-              fsn_.contentWindow.postMessage({cmd: 'cd', data: dest}, location.origin);
-            }
-
-          }, function(e) { invalidOpForEntryType_(e, cmd, dest); });
-
-          break;
-        case 'mkdir':
-          var dashP = false;
-          var index = args.indexOf('-p');
-          if (index != -1) {
-            args.splice(index, 1);
-            dashP = true;
-          }
-
-          if (!args.length) {
-            output('usage: ' + cmd + ' [-p] directory<br>');
-            break;
-          }
-
-          // Create each directory passed as an argument.
-          args.forEach(function(dirName, i) {
-            if (dashP) {
-              var folders = dirName.split('/');
-
-              // Throw out './' or '/' if present on the beginning of our path.
-              if (folders[0] == '.' || folders[0] == '') {
-                folders = folders.slice(1);
-              }
-
-              createDir_(cwd_, folders);
-            } else {
-              cwd_.getDirectory(dirName, {create: true, exclusive: true}, function() {
-                // Tell FSN visualizer that we're mkdir'ing.
-                if (fsn_) {
-                  fsn_.contentWindow.postMessage({cmd: 'mkdir', data: dirName}, location.origin);
-                }
-              }, function(e) { invalidOpForEntryType_(e, cmd, dirName); });
-            }
-          });
-          break;
-        case 'cp':
-        case 'mv':
-          var src = args[0];
-          var dest = args[1];
-
-          if (!src || !dest) {
-            output(['usage: ', cmd, ' source target<br>',
-                   '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;', cmd,
-                   ' source directory/'].join(''));
-            break;
-          }
-
-          var runAction = function(cmd, srcDirEntry, destDirEntry, opt_newName) {
-            var newName = opt_newName || null;
-            if (cmd == 'mv') {
-                srcDirEntry.moveTo(destDirEntry, newName);
-              } else {
-                srcDirEntry.copyTo(destDirEntry, newName);
-              }
-          };
-
-          // Moving to a folder? (e.g. second arg ends in '/').
-          if (dest[dest.length - 1] == '/') {
-            cwd_.getDirectory(src, {}, function(srcDirEntry) {
-              // Create blacklist for dirs we can't re-create.
-              var create = [
-                '.', './', '..', '../', '/'].indexOf(dest) != -1 ? false : true;
-
-              cwd_.getDirectory(dest, {create: create}, function(destDirEntry) {
-                runAction(cmd, srcDirEntry, destDirEntry);
-              }, errorHandler_);
-            }, function(e) {
-              // Try the src entry as a file instead.
-              cwd_.getFile(src, {}, function(srcDirEntry) {
-                cwd_.getDirectory(dest, {}, function(destDirEntry) {
-                  runAction(cmd, srcDirEntry, destDirEntry);
-                }, errorHandler_);
-              }, errorHandler_);
-            });
-          } else { // Treat src/destination as files.
-            cwd_.getFile(src, {}, function(srcFileEntry) {
-              srcFileEntry.getParent(function(parentDirEntry) {
-                runAction(cmd, srcFileEntry, parentDirEntry, dest);
-              }, errorHandler_);
-            }, errorHandler_);
-          }
-
+          output('<p>There\'s some other available commands. Use your imagination :-).</p>');
           break;
         case 'open':
           var fileName = args.join(' ');
@@ -556,7 +332,7 @@ var Terminal = Terminal || function(containerId) {
           break;
         case 'who':
           output(document.title +
-                 ' - By: Eric Bidelman &lt;ericbidelman@chromium.org&gt;');
+                 ' - By: Ayrton Araujo &lt;root@ayrtonaraujo.net&gt;');
           break;
         default:
           if (cmd) {
@@ -763,14 +539,9 @@ var Terminal = Terminal || function(containerId) {
   return {
     initFS: function(persistent, size) {
       output('<div>Welcome to ' + document.title +
-             '! (v' + VERSION_ + ')</div>');
+             ' \\o/ (v' + VERSION_ + ')</div>');
       output((new Date()).toLocaleString());
       output('<p>Documentation: type "help"</p>');
-
-      if (!!!window.requestFileSystem) {
-        output('<div>Sorry! The FileSystem APIs are not available in your browser.</div>');
-        return;
-      }
 
       var type = persistent ? window.PERSISTENT : window.TEMPORARY;
       window.requestFileSystem(type, size, function(filesystem) {
@@ -818,4 +589,3 @@ var Terminal = Terminal || function(containerId) {
     selectFile: selectFile_
   }
 };
-

@@ -1,17 +1,62 @@
 <!DOCTYPE html>
-<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-
+<html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
-  <title>ayrtonaraujo.net</title>
-  <link rel="stylesheet" href="css/style.css" />
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<title>ayrtonaraujo.net</title>
+<link rel="stylesheet" media="all" href="assets/terminal.css">
 </head>
 <body>
-	<div id="console"></div>
+
+<aside class="help hidden">
+  <section>
+    <div>
+      <span onclick="toggleHelp()" id="close">x</span>
+      <h2>Keyboard shortcuts</h2>
+      <div class="shortcuts">
+        <p><strong>&lt;ctrl&gt; + s</strong> : Toggle CRT monitor flicker effect</p>
+        <p><strong>&lt;esc&gt;</strong> : toggle this help menu</p>
+      </div>
+    </div>
+    <div>
+      <h2>What is this?</h2>
+      <p>A Command-line terminal/shell running on top of HTML5 APIs.</p>
+      <p>By: Eric Bidelman &lt;ericbidelman@chromium.org&gt;</p>
+    </div>
+  </section>
+</aside>
+
+<!--<div class="crt top"></div>-->
+<div class="interlace"></div>
+<div id="container"></div>
+<!--<div class="crt bottom"></div>-->
+
+<script src="js/terminal.js"></script>
+<script>
+function toggleHelp() {
+  document.querySelector('.help').classList.toggle('hidden');
+  document.body.classList.toggle('dim');
+}
+
+(function() {
+  var term = new Terminal('container');
+  term.initFS(false, 1024 * 1024);
+
+  if (document.location.hash) {
+    var theme = document.location.hash.substring(1).split('=')[1];
+    term.setTheme(theme);
+  } else if (localStorage.theme) {
+    term.setTheme(localStorage.theme);
+  }
+
+  document.body.addEventListener('keydown', function(e) {
+    if (e.keyCode == 27) { // Esc
+      toggleHelp();
+      e.stopPropagation();
+      e.preventDefault();
+    }
+  }, false);
+})();
+</script>
 </body>
-  <script src="js/vendor/zepto.min.js"></script>
-  <script src="js/vendor/jqconsole.min.js"></script>
-  <script src="js/shell.js"></script>
 </html>
