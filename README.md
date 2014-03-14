@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/ayr-ton/ayr-ton.github.io.png?label=ready&title=Ready)](https://waffle.io/ayr-ton/ayr-ton.github.io)
 ayr-terminal [![Build Status](https://travis-ci.org/ayr-ton/ayr-terminal.png?branch=master)](https://travis-ci.org/ayr-ton/ayr-terminal)
 ================
 
